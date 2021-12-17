@@ -1,0 +1,29 @@
+{
+	"name": "globcopy",
+	"version": "1.0.0",
+	"description": "Copy files based on glob patterns",
+	"bin": "bin.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://erwinstone@github.com/erwinstone/globcopy.git"
+	},
+	"author": "erwinstone",
+	"license": "MIT",
+	"keywords": [
+		"glob",
+		"copy",
+		"glob copy",
+		"glob copier"
+	],
+	"bugs": {
+		"url": "https://github.com/erwinstone/globcopy/issues"
+	},
+	"homepage": "https://github.com/erwinstone/globcopy#readme",
+	"files": [
+		"bin.js"
+	],
+	"dependencies": {
+		"chokidar": "^3.5.2",
+		"fast-glob": "^3.2.7"
+	}
+}
