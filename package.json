@@ -1,5 +1,5 @@
 {
-	"name": "globcopy",
+	"name": "@erwinstone/globcopy",
 	"version": "1.0.0",
 	"description": "Copy files based on glob patterns",
 	"bin": "bin.js",

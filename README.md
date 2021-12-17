@@ -9,7 +9,7 @@ Copy files based on glob patterns
 Install globcopy with npm
 
 ```bash
-npm install globcopy -g
+npm install @erwinstone/globcopy -g
 ```
 
 ## Usage/Examples
