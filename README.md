@@ -14,17 +14,49 @@ npm install @erwinstone/globcopy -g
 
 ## Usage/Examples
 
+### cli:
 data.json :
 ```json
 {
-    "vendor/bootstrap": "node_modules/bootstrap/dist/js/bootstrap.bundle.*",
-    "vendor/summernote": [
-        "node_modules/summernote/dist/**/*",
-        "!node_modules/summernote/dist/**/*.{zip,txt}"
-    ]
+	"vendor/bootstrap": "node_modules/bootstrap/dist/js/bootstrap.bundle.*",
+	"vendor/summernote": [
+		"node_modules/summernote/dist/**/*",
+		"!node_modules/summernote/dist/**/*.{zip,txt}"
+	]
 }
 ```
 ```bash
 globcopy data.json
 globcopy data.json --watch
+```
+
+### javascript api:
+```bash
+npm install @erwinstone/globcopy
+```
+```javascript
+import { globcopy, globcopyObj } from '@erwinstone/globcopy'
+
+await globcopy({
+	path: './data.json',
+})
+
+// or
+
+await globcopy({
+	path: './data.json',
+	watch: true,
+})
+
+// or
+
+await globcopyObj(
+	JSON.stringify({
+		'vendor/bootstrap': 'node_modules/bootstrap/dist/js/bootstrap.bundle.*',
+		'vendor/summernote': [
+			'node_modules/summernote/dist/**/*',
+			'!node_modules/summernote/dist/**/*.{zip,txt}'
+		],
+	})
+)
 ```

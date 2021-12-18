@@ -1,14 +1,15 @@
 {
 	"name": "@erwinstone/globcopy",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Copy files based on glob patterns",
-	"bin": "bin.js",
-	"repository": {
-		"type": "git",
-		"url": "git+https://erwinstone@github.com/erwinstone/globcopy.git"
-	},
-	"author": "erwinstone",
+	"bin": "dist/bin.js",
+	"main": "dist/main.js",
+	"types": "dist/main.d.ts",
+	"module": "dist/main.esm.js",
+	"source": "src/main.ts",
+	"repository": "https://github.com/erwinstone/globcopy.git",
 	"license": "MIT",
+	"author": "erwinstone",
 	"keywords": [
 		"glob",
 		"copy",
@@ -20,10 +21,29 @@
 	},
 	"homepage": "https://github.com/erwinstone/globcopy#readme",
 	"files": [
-		"bin.js"
+		"dist"
 	],
+	"exports": {
+		"default": "./dist/main.js",
+		"import": "./dist/main.esm.js",
+		"require": "./dist/main.js"
+	},
+	"scripts": {
+		"dev": "node builder.js --watch",
+		"build": "run-s build-*",
+		"build-ts": "node builder.js",
+		"build-dts": "tsc src/main.ts -d --emitDeclarationOnly --esModuleInterop --downlevelIteration --outDir dist",
+		"build-dts-esm": "shx cp dist/main.d.ts dist/main.esm.d.ts"
+	},
 	"dependencies": {
 		"chokidar": "^3.5.2",
 		"fast-glob": "^3.2.7"
+	},
+	"devDependencies": {
+		"@types/node": "^17.0.0",
+		"esbuild": "^0.14.5",
+		"npm-run-all": "^4.1.5",
+		"shx": "^0.3.3",
+		"typescript": "^4.5.4"
 	}
 }
