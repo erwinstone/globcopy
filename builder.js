@@ -4,7 +4,7 @@ const esbuild = require('esbuild')
 
 const banner = `/*!
 * ${pkg.name} v${pkg.version} (${pkg.homepage})
-* Copyright ${new Date().getFullYear()} ${pkg.author}
+* Copyright 2021 - ${new Date().getFullYear()} ${pkg.author}
 * Licensed under ${pkg.license} (${pkg.repository.replace('.git', '')}/blob/master/LICENSE)
 */`
 
