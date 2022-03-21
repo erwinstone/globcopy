@@ -35,7 +35,7 @@ globcopy data.json --watch
 npm install @erwinstone/globcopy
 ```
 ```javascript
-import { globcopy, globcopyObj } from '@erwinstone/globcopy'
+import { globcopy, globcopyRaw } from '@erwinstone/globcopy'
 
 await globcopy({
 	path: './data.json',
@@ -50,7 +50,7 @@ await globcopy({
 
 // or
 
-await globcopyObj(
+await globcopyRaw(
 	JSON.stringify({
 		'vendor/bootstrap': 'node_modules/bootstrap/dist/js/bootstrap.bundle.*',
 		'vendor/summernote': [

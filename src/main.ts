@@ -74,7 +74,7 @@ export async function globcopy(params: globcopyParams) {
 	}
 }
 
-export async function globcopyObj(dataContent: string) {
+export async function globcopyRaw(dataContent: string) {
 	const data: Data = Object.entries(JSON.parse(dataContent))
 	await run(data)
 }
